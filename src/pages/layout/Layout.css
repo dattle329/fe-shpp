@@ -16,9 +16,17 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
 
 .layout-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.top-side{
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -29,10 +37,35 @@ body {
   justify-content: space-between;
   align-items: center;
   width: 50%;
+  height: 100%;
+}
+
+.left-side h3{
+  color: azure;
 }
 
 .right-side{
   width: 50%;
-  
+}
+
+.bottom-side{
+  color: #96a397;
+  position: absolute;
+  bottom: 20px;
+}
+
+.bottom-side ul{
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+}
+
+.bottom-side ul li{
+  padding: 10px;
+}
+
+.bottom-side ul li:hover{
+  color: #515552;
+  cursor: pointer;
 }
 

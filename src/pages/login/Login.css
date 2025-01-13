@@ -8,8 +8,6 @@
   font-family: "Montserrat", sans-serif;
 }
 
-
-
 #root {
   width: 100%;
   padding: 0.6rem;
@@ -21,7 +19,8 @@
   padding: 2rem 1.5rem;
   border-radius: 0.5rem;
   background: #fff;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  opacity: 0.9; 
+  box-shadow: 0 100px 200px rgba(161, 10, 10, 0.1);
 }
 
 .login-container .form-title {

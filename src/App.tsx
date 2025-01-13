@@ -3,6 +3,7 @@ import Layout from './pages/layout/Layout';
 import Login from './pages/login/Login';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import SignUp from './pages/signup/SignUp';
+import Authenticated from './pages/authenticated/Authenticated';
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
           <Route path='/login' index element={<Login />} />
           <Route path='/signup' index element={<SignUp />} />
         </Route>
+        <Route path='/authenticated' index element={<Authenticated />} />
       </Routes>
     </BrowserRouter>
   )

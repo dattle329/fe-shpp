@@ -17,7 +17,8 @@
     "mui": "^0.0.1",
     "react": "^18.3.1",
     "react-browser-router": "^2.1.2",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "xxxx": "^3.0.4"
   },
   "devDependencies": {
     "@eslint/js": "^9.17.0",
