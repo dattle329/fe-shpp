@@ -1,11 +1,10 @@
-import "./Login.css";
-import SocialLogin from "../../components/SocialLogin";
-import InputField from "../../components/InputField";
-import { useEffect, useState } from "react";
-import axios from "axios";
 import { Box, CircularProgress } from "@mui/material";
+import InputField from "../../components/InputField";
+import axios from "axios";
+import { useEffect, useState } from "react";
+import "../login/login.css";
 
-const Login = () => {
+const SignUp = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
@@ -16,11 +15,11 @@ const Login = () => {
     }, 1000);
   }, []);
 
-  const handleLogin = (e: any) => {
+  const handleSignup = (e: any) => {
     e.preventDefault();
     setLoading(true);
     axios
-      .post(`http://localhost:8080/user/login`, { username, password })
+      .post(`http://localhost:8080/user/signup`, { username, password })
       .then((res) => {
         console.log(res);
         console.log(res.data);
@@ -34,11 +33,7 @@ const Login = () => {
 
   return (
     <div className="login-container">
-      <h2 className="form-title">Log in with</h2>
-      <SocialLogin />
-      <p className="separator">
-        <span>or</span>
-      </p>
+      <h2 className="form-title">Create an account</h2>
       <form action="#" className="login-form">
         <InputField
           type="text"
@@ -69,24 +64,18 @@ const Login = () => {
         <a href="#" className="forgot-password-link">
           Forgot password?
         </a>
-        <button type="submit" className="login-button" onClick={handleLogin}>
+        <button type="submit" className="login-button" onClick={handleSignup}>
           {loading ? (
             <Box sx={{ display: "flex", justifyContent: "center" }}>
               <CircularProgress />
             </Box>
           ) : (
-            "Log In"
+            "Sign up"
           )}
         </button>
       </form>
-      <p className="signup-prompt">
-        Don&apos;t have an account?{" "}
-        <a href="#" className="signup-link">
-          Sign up
-        </a>
-      </p>
     </div>
   );
 };
 
-export default Login;
+export default SignUp;
