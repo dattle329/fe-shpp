@@ -2,7 +2,7 @@ import { Box, CircularProgress } from "@mui/material";
 import InputField from "../../components/InputField";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import "../login/login.css";
+import "../login/Login.css";
 
 const SignUp = () => {
   const [username, setUsername] = useState("");
