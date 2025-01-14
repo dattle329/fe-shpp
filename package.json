@@ -1,5 +1,5 @@
 {
-  "name": "login-page",
+  "name": "my-vue-app",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,28 +10,24 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@angular/compiler-cli": "^19.0.6",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
     "@mui/material": "^6.3.1",
+    "@mui/styled-engine": "^6.3.1",
     "axios": "^1.7.9",
-    "mui": "^0.0.1",
     "react": "^18.3.1",
-    "react-browser-router": "^2.1.2",
     "react-dom": "^18.3.1",
-    "xxxx": "^3.0.4"
+    "react-router-dom": "^7.1.1"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^2.21.0",
     "@eslint/js": "^9.17.0",
     "@types/react": "^18.3.18",
     "@types/react-dom": "^18.3.5",
     "@vitejs/plugin-react": "^4.3.4",
     "eslint": "^9.17.0",
-    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-hooks": "^5.0.0",
     "eslint-plugin-react-refresh": "^0.4.16",
     "globals": "^15.14.0",
-    "react-router-dom": "^7.1.1",
     "typescript": "~5.6.2",
     "typescript-eslint": "^8.18.2",
     "vite": "^6.0.5"
