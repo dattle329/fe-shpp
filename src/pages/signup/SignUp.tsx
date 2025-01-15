@@ -73,6 +73,10 @@ const SignUp = () => {
             "Sign up"
           )}
         </button>
+        
+        <p className="signup-prompt">
+        Already have an account? <a href="/login">Log in</a>
+      </p>
       </form>
     </div>
   );

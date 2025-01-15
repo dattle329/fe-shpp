@@ -6,8 +6,8 @@ const SocialLogin = () => {
           Google
         </button>
         <button className="social-button">
-          <img src="./src/assets/icon/keycloak-icon.png" alt="Keycloak" className="social-icon" />
-          Keycloak
+          <img src="./src/assets/icon/facebook-icon.png" alt="Facebook" className="social-icon" />
+          Facebook
         </button>
       </div>
     )

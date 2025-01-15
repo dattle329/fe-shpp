@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { Box, CircularProgress } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import Notification from "../../notification/Notification";
 
 const Login = () => {
   const [username, setUsername] = useState("");
@@ -24,17 +25,18 @@ const Login = () => {
     e.preventDefault();
     setLoading(true);
     axios
-      .post(`http://18.226.4.205:8081/user/login`, { username, password })
+      .post(`http://localhost:8081/user/login`, { username, password })
       .then((res) => {
-        console.log(res);
         console.log(res.data);
         setLoading(false);
         navigate('/authenticated');
+        Notification({ status: 'success', message: 'Login successful' });
       })
       .catch((error) => {
         setLoading(false);
         setError(true);
         setErrorMessage(error.response.data);
+        Notification({ status: 'error', message: 'Login failed' });
       });
   };
 
