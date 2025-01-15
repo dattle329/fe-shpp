@@ -24,7 +24,7 @@ const Login = () => {
     e.preventDefault();
     setLoading(true);
     axios
-      .post(`http://18.226.4.205//:8081/user/login`, { username, password })
+      .post(`http://18.226.4.205:8081/user/login`, { username, password })
       .then((res) => {
         console.log(res);
         console.log(res.data);
