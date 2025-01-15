@@ -19,7 +19,7 @@ const SignUp = () => {
     e.preventDefault();
     setLoading(true);
     axios
-      .post(`http://localhost:8080/user/signup`, { username, password })
+      .post(`http://3.21.248.189/:8080/user/signup`, { username, password })
       .then((res) => {
         console.log(res);
         console.log(res.data);
