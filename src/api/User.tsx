@@ -1,5 +1,6 @@
 import axios from "axios";
 import * as CONSTANT from "../constant/Constant";
+import axiosInstance from "../config/ApiConfig";
 
 export const login = async (username: string, password: string) => {
   return axios.post(CONSTANT.BASE_URL + 'user/login', { username, password });
@@ -10,5 +11,5 @@ export const signup = async (username: string, password: string) => {
   }
 
 export const test = async () => {
-    return axios.get(CONSTANT.BASE_URL + 'test');
+    return axiosInstance.get(CONSTANT.BASE_URL + 'test');
 }

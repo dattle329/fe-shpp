@@ -28,7 +28,7 @@ const Login = () => {
       .then((res) => {
         console.log(res.data);
         setLoading(false);
-        localStorage.setItem("accesstoken", res.data.accessToken);
+        localStorage.setItem("accessToken", res.data.accessToken);
         localStorage.setItem("refreshToken", res.data.refreshToken);
         navigate("/authenticated");
         Notification({ status: "success", message: "Login successful" });
