@@ -1,8 +1,8 @@
 import { Box, CircularProgress } from "@mui/material";
 import InputField from "../../components/InputField";
-import axios from "axios";
 import { useEffect, useState } from "react";
 import "../login/Login.css";
+import * as ApiHandler from "../../api/User";
 
 const SignUp = () => {
   const [username, setUsername] = useState("");
@@ -18,8 +18,7 @@ const SignUp = () => {
   const handleSignup = (e: any) => {
     e.preventDefault();
     setLoading(true);
-    axios
-      .post(`http://3.142.54.100:8081/user/signup`, { username, password })
+    ApiHandler.signup(username, password)
       .then((res) => {
         console.log(res);
         console.log(res.data);
@@ -29,6 +28,8 @@ const SignUp = () => {
         setLoading(false);
         console.log(error.response.data);
       });
+
+    
   };
 
   return (

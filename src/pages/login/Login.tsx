@@ -2,17 +2,17 @@ import "./Login.css";
 import SocialLogin from "../../components/SocialLogin";
 import InputField from "../../components/InputField";
 import { useEffect, useState } from "react";
-import axios from "axios";
 import { Box, CircularProgress } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import Notification from "../../notification/Notification";
+import * as ApiHandler from "../../api/User";
 
 const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
-  const [errorMessage, setErrorMessage] = useState('');
+  const [errorMessage, setErrorMessage] = useState("");
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -24,19 +24,20 @@ const Login = () => {
   const handleLogin = (e: any) => {
     e.preventDefault();
     setLoading(true);
-    axios
-      .post(`http://3.142.54.100:8081/user/login`, { username, password })
+    ApiHandler.login(username, password)
       .then((res) => {
         console.log(res.data);
         setLoading(false);
-        navigate('/authenticated');
-        Notification({ status: 'success', message: 'Login successful' });
+        localStorage.setItem("accesstoken", res.data.accessToken);
+        localStorage.setItem("refreshToken", res.data.refreshToken);
+        navigate("/authenticated");
+        Notification({ status: "success", message: "Login successful" });
       })
       .catch((error) => {
         setLoading(false);
         setError(true);
         setErrorMessage(error.response.data);
-        Notification({ status: 'error', message: 'Login failed' });
+        Notification({ status: "error", message: "Login failed" });
       });
   };
 
@@ -75,17 +76,21 @@ const Login = () => {
           onChange={(e: any) => setPassword(e.target.value)}
         />
         {error ? (
-          <p style={{color: 'red', marginBottom: '15px'}}>{errorMessage}</p>
+          <p style={{ color: "red", marginBottom: "15px" }}>{errorMessage}</p>
         ) : (
-          ''
+          ""
         )}
-        <a href="#" className="forgot-password-link" style={{marginTop: '5px'}}>
+        <a
+          href="#"
+          className="forgot-password-link"
+          style={{ marginTop: "5px" }}
+        >
           Forgot password?
         </a>
         <button type="submit" className="login-button" onClick={handleLogin}>
           {loading ? (
             <Box sx={{ display: "flex", justifyContent: "center" }}>
-              <CircularProgress sx={{ color: 'white' }}/>
+              <CircularProgress sx={{ color: "white" }} />
             </Box>
           ) : (
             "Log In"
